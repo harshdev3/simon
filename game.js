@@ -6,6 +6,21 @@ var stage = 1;  // when clearing the level -> 1  |  when failed the level -> 0
 var started = false;  // uses to toggle the nextSequence() only for the first keypress
 var userChosenColor;  // for storing the recent color picked by user
 
+
+checkScreenSize();
+
+$(window).resize(function() {
+    checkScreenSize();
+});
+
+$(".startBtn").click(function(){
+    if (!started) {  //toggle code
+        $(".startBtn").hide();
+        nextSequence();
+    }
+})
+
+
 // player field
 $(".btn").click(function () {
     userChosenColor = $(this).attr("id");
@@ -64,16 +79,38 @@ function playSound(name) {
     sound.play();
 }
 
-function gameOver(){
+function gameOver() {
     $("body").addClass("game-over");
     setTimeout(function () {
         $("body").removeClass("game-over");
     }, 100);
     playSound("wrong");
     levelValue = 0;
-    $("h1").text("Game Over, Press Any Key to Restart");
+
+    if($(window).width() < 599){
+        $("h1").text("Press Restart To Play");
+        $(".startBtn").html("Restart");
+        $(".startBtn").css("width","192px");
+        $(".startBtn").show();
+    }
+
+    else{
+        $("h1").text("Game Over, Press Any Key to Restart");
+    }
+
     started = false;
     gamePattern = [];
     userClickedPattern = [];
     stage = 0;
+}
+
+function checkScreenSize(){
+    if($(window).width() < 599){
+        $("h1").text("Press Start To Play");
+        $(".startBtn").show();
+    }
+    
+    else{
+        $(".startBtn").hide();
+    }    
 }
