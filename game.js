@@ -90,7 +90,7 @@ function gameOver() {
     if($(window).width() < 599){
         $("h1").text("Press Restart To Play");
         $(".startBtn").html("Restart");
-        $(".startBtn").css("width","192px");
+        $(".startBtn").css("width","100px");
         $(".startBtn").show();
     }
 
