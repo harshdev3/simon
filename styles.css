@@ -17,6 +17,16 @@ body {
 
 }
 
+.startBtn{
+  background-color: white;
+  padding: 20px;
+  width: 130px;
+  font-size: 3.5rem;
+  font-family: sans-serif;
+  margin: 100px auto;
+  font-weight: 700;
+}
+
 .btn {
   margin: 25px;
   display: inline-block;
