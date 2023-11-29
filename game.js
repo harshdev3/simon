@@ -87,7 +87,7 @@ function gameOver() {
     playSound("wrong");
     levelValue = 0;
 
-    if($(window).width() < 599){
+    if($(window).width() < 980){
         $("h1").text("Press Restart To Play");
         $(".startBtn").html("Restart");
         $(".startBtn").css("width","100px");
@@ -105,7 +105,7 @@ function gameOver() {
 }
 
 function checkScreenSize(){
-    if($(window).width() < 599){
+    if($(window).width() < 980){
         $("h1").text("Press Start To Play");
         $(".startBtn").show();
     }
