@@ -81,3 +81,10 @@ body {
     width: 90%;
   }
 }
+
+@media (min-width:600px) and (max-width:992px){
+  .startBtn{
+    width: 230px;
+    padding: 30px;
+  }
+}
